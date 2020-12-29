@@ -10,6 +10,7 @@ execute_process(COMMAND
   OUTPUT_VARIABLE CPACK_PACKAGE_VERSION
   OUTPUT_STRIP_TRAILING_WHITESPACE
 )
+configure_file(include/common/version.h.in include/common/version.h)
 
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_LIST_DIR}/cmake)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)

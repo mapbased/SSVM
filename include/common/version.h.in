@@ -12,9 +12,15 @@
 #pragma once
 
 #include <cstdint>
+#include <string_view>
 
 namespace SSVM {
 
+#cmakedefine CPACK_PACKAGE_VERSION "@CPACK_PACKAGE_VERSION@"sv
+using namespace std::literals::string_view_literals;
+static inline std::string_view kVersionString [[maybe_unused]] =
+    CPACK_PACKAGE_VERSION;
 static inline uint32_t kVersion [[maybe_unused]] = 1;
+#undef CPACK_PACKAGE_VERSION
 
 } // namespace SSVM
